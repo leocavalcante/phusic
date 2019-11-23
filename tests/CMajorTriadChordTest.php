@@ -5,7 +5,7 @@ namespace Phusic\Test;
 use PHPUnit\Framework\TestCase;
 use Phusic\{Note, Scale, Chord};
 
-class CMajorTriadChord extends TestCase
+class CMajorTriadChordTest extends TestCase
 {
     public function testCMajorTriadChord()
     {
