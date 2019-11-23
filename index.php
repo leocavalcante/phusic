@@ -71,8 +71,27 @@ class Scale {
     }
 }
 
-$c_major = array_reduce($major, new Scale, [new C]);
-echo join(', ', $c_major), PHP_EOL;
+class Parse {
+    public function __invoke(string $note): Note {
+        switch (true) {
+        case preg_match('/^Ab|G#$/', $note): return new Ab;
+        case preg_match('/^A$/', $note): return new A;
+        case preg_match('/^Bb|A#$/', $note): return new Bb;
+        case preg_match('/^B$/', $note): return new B;
+        case preg_match('/^C$/', $note): return new C;
+        case preg_match('/^Db|C#$/', $note): return new Db;
+        case preg_match('/^D$/', $note): return new D;
+        case preg_match('/^Eb|D#$/', $note): return new Eb;
+        case preg_match('/^E$/', $note): return new E;
+        case preg_match('/^F$/', $note): return new F;
+        case preg_match('/^G|F#$/', $note): return new Gb;
+        case preg_match('/^G$/', $note): return new G; }
 
-$f_sharp_major = array_reduce($major, new Scale, [new Gb]);
-echo join(', ', $f_sharp_major);
+        throw new ParseError;
+    }
+}
+
+$parse = new Parse();
+$note = $parse($argv[1]);
+$scale = array_reduce($major, new Scale, [$note]);
+echo join(', ', $scale), PHP_EOL;
