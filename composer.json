@@ -16,8 +16,17 @@
             "Phusic\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Phusic\\Test\\": "tests/"
+        }
+    },
     "bin": ["bin/major-scale.php"],
     "scripts": {
-        "major-scale": "php bin/major-scale.php"
+        "major-scale": "php bin/major-scale.php",
+        "test": "phpunit --bootstrap vendor/autoload.php tests"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4"
     }
 }
