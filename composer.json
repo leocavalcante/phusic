@@ -1,0 +1,23 @@
+{
+    "name": "leocavalcante/phusic",
+    "description": "PHP port of the Fusic experiment",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "leocavalcante",
+            "email": "lc@leocavalcante.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Phusic\\": "src/"
+        }
+    },
+    "bin": ["bin/major-scale.php"],
+    "scripts": {
+        "major-scale": "php bin/major-scale.php"
+    }
+}
