@@ -21,9 +21,10 @@
             "Phusic\\Test\\": "tests/"
         }
     },
-    "bin": ["bin/major-scale.php"],
+    "bin": ["bin/major-scale.php", "bin/triad-chord.php"],
     "scripts": {
         "major-scale": "php bin/major-scale.php",
+        "triad-chord": "php bin/triad-chord.php",
         "test": "phpunit --bootstrap vendor/autoload.php tests"
     },
     "require-dev": {

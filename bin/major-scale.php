@@ -4,7 +4,7 @@ namespace Phusic;
 
 use Phusic\Scale\Major;
 
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $parse = new Parse();
 $note = $parse($argv[1]);
